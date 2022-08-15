@@ -215,6 +215,7 @@ UnityEngine.Application::get_isBatchMode
 UnityEngine.Application::get_isFocused
 UnityEngine.Application::get_isPlaying
 UnityEngine.Application::get_targetFrameRate
+UnityEngine.Application::get_identifier
 UnityEngine.Application::get_unityVersion
 UnityEngine.Application::set_targetFrameRate
 UnityEngine.Application::get_platform
@@ -738,6 +739,7 @@ UnityEngine.Profiling.Profiler::get_enabled
 UnityEngine.Profiling.Profiler::BeginSampleImpl
 UnityEngine.Profiling.Profiler::EndSample
 UnityEngine.PropertyNameUtils::PropertyNameFromString_Injected
+UnityEngine.QualitySettings::get_vSyncCount
 UnityEngine.QualitySettings::get_lodBias
 UnityEngine.QualitySettings::set_lodBias
 UnityEngine.QualitySettings::get_activeColorSpace

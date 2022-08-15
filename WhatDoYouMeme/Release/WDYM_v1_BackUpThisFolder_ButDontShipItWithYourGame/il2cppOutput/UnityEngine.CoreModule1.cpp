@@ -546,6 +546,8 @@ struct RangeAttribute_t8765B7FFCE8F675585C966D7E9FC8FE555D84557;
 struct RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5;
 // UnityEngine.RequireComponent
 struct RequireComponent_t8DDD209443A8519033BD1B38803A47077D2A1138;
+// UnityEngine.Scripting.RequireDerivedAttribute
+struct RequireDerivedAttribute_t2B68F4997C862A6D711F826D53087DFEC3379C64;
 // System.ResolveEventHandler
 struct ResolveEventHandler_t3CE88268E672E41B1B55E01587AFBCFB85044692;
 // UnityEngine.ResourceRequest
@@ -3175,6 +3177,11 @@ struct RequireComponent_t8DDD209443A8519033BD1B38803A47077D2A1138  : public Attr
 	Type_t* ___m_Type1_1;
 	// System.Type UnityEngine.RequireComponent::m_Type2
 	Type_t* ___m_Type2_2;
+};
+
+// UnityEngine.Scripting.RequireDerivedAttribute
+struct RequireDerivedAttribute_t2B68F4997C862A6D711F826D53087DFEC3379C64  : public Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA
+{
 };
 
 // System.SByte
@@ -33863,6 +33870,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AlwaysLinkAssemblyAttribute__ctor_m4F7CE
 #endif
 // System.Void UnityEngine.Scripting.PreserveAttribute::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PreserveAttribute__ctor_mF9E65066D9317F56C6F4AE274A1E2D55D6A62F96 (PreserveAttribute_t3B4D9311A3DF0B9342570C8E43A61973258D5751* __this, const RuntimeMethod* method) 
+{
+	{
+		Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void UnityEngine.Scripting.RequireDerivedAttribute::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RequireDerivedAttribute__ctor_mDE2D439980BB33C5AEB061D0ED83634D9F4115FF (RequireDerivedAttribute_t2B68F4997C862A6D711F826D53087DFEC3379C64* __this, const RuntimeMethod* method) 
 {
 	{
 		Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2(__this, NULL);

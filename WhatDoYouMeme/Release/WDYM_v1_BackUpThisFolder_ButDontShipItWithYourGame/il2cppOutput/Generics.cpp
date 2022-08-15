@@ -616,6 +616,10 @@ struct U3CU3Ec__DisplayClass6_0_1_t2A430DB9706A5E7B2D83D88C8285A3BE7A6DE92D;
 struct U3CU3Ec__DisplayClass6_0_1_tE55BAA8F710B52E70FD7088CD314B782A20EA879;
 // Unity.VisualScripting.UnaryOperatorHandler/<>c__DisplayClass6_0`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
 struct U3CU3Ec__DisplayClass6_0_1_tA46343A63F591D9F914A406CD88285350A9839F4;
+// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0<System.Double>
+struct U3CU3Ec__DisplayClass7_0_t20DF8C90174AF4E98FA51C4EDD23C6624A506D12;
+// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct U3CU3Ec__DisplayClass7_0_tC6EDAB96CE312F1A318FB109C12AEA6E201892D1;
 // System.Linq.Enumerable/<>c__DisplayClass7_0`3<System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>,System.Object,System.ValueTuple`2<System.Object,System.Object>>
 struct U3CU3Ec__DisplayClass7_0_3_t8FF294D3C6B8841DC6C84CAAE43BC6AAB7362E37;
 // System.Linq.Enumerable/<>c__DisplayClass7_0`3<System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>,System.Object,System.Guid>
@@ -1042,6 +1046,10 @@ struct Action_2_tCFAD9DC5CF83678682A1102DCD1B12DE9FCA395A;
 struct Action_2_t31DE204344410D5DD02FBF738CE4A5EE7EDC040E;
 // System.Action`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
 struct Action_2_t1D42C7D8DCD2DEB7C556FB3783F0EDAFF694E5E8;
+// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1<System.Double>
+struct AsyncValue_1_tEB0DAFC36390120B2189858822D394983AC03C9A;
+// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct AsyncValue_1_t8FFFF305FB898F2C17135C42A91378F7AB9808B7;
 // UnityEngine.UIElements.BaseCompositeField`3<UnityEngine.Rect,System.Object,System.Single>
 struct BaseCompositeField_3_t9F5F0841A66BBB8FDCD321F0944E362CAD139BA9;
 // UnityEngine.UIElements.BaseCompositeField`3<UnityEngine.RectInt,System.Object,System.Int32>
@@ -1204,6 +1212,8 @@ struct Func_1_t22BD7B5F8DB687330688484631E4670ADE9A7C9D;
 struct Func_1_t072CADF8B1FAE104EFB7233AABB82B833DE5EEBA;
 // System.Func`1<Unity.VisualScripting.Recursion`1<Unity.VisualScripting.Flow/RecursionNode>>
 struct Func_1_tDDB7896D4A271F8D526A55B1B50800F31A40D6CB;
+// System.Func`1<System.Double>
+struct Func_1_t7748833627297E42C5F5E294D4EF6457E839B5D7;
 // System.Func`1<UnityEngine.UIElements.IGenericMenu>
 struct Func_1_t19B4AA7D8A9D43C2117CE38228D976097D91CF6B;
 // System.Func`1<System.Object>
@@ -2040,6 +2050,8 @@ struct __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D0
 struct Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07;
 // System.AsyncCallback
 struct AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C;
+// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncUpdater
+struct AsyncUpdater_t723A6C592E8D827601A39F38D588CF80812FE976;
 // UnityEngine.UIElements.BaseFieldMouseDragger
 struct BaseFieldMouseDragger_t6BB06D66A91C4C7DF3B50011F54727FB8CE92ED7;
 // UnityEngine.UIElements.BaseVisualElementPanel
@@ -3772,6 +3784,24 @@ struct U3CU3Ec__DisplayClass6_0_1_tA46343A63F591D9F914A406CD88285350A9839F4  : p
 	Func_2_tED7CA67878EF0FB299872769153413F97964501A* ___handler_0;
 };
 
+// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0<System.Double>
+struct U3CU3Ec__DisplayClass7_0_t20DF8C90174AF4E98FA51C4EDD23C6624A506D12  : public RuntimeObject
+{
+	// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1<T> UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0::<>4__this
+	AsyncValue_1_tEB0DAFC36390120B2189858822D394983AC03C9A* ___U3CU3E4__this_0;
+	// System.Func`1<T> UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0::updateFunc
+	Func_1_t7748833627297E42C5F5E294D4EF6457E839B5D7* ___updateFunc_1;
+};
+
+// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct U3CU3Ec__DisplayClass7_0_tC6EDAB96CE312F1A318FB109C12AEA6E201892D1  : public RuntimeObject
+{
+	// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1<T> UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0::<>4__this
+	AsyncValue_1_t8FFFF305FB898F2C17135C42A91378F7AB9808B7* ___U3CU3E4__this_0;
+	// System.Func`1<T> UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0::updateFunc
+	Func_1_tBB8824FA8746333BFFF3AB3CE4A41B58450AF431* ___updateFunc_1;
+};
+
 // System.Linq.Enumerable/<>c__DisplayClass7_0`3<System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>,System.Object,System.ValueTuple`2<System.Object,System.Object>>
 struct U3CU3Ec__DisplayClass7_0_3_t8FF294D3C6B8841DC6C84CAAE43BC6AAB7362E37  : public RuntimeObject
 {
@@ -5185,6 +5215,32 @@ struct U3COfTypeIteratorU3Ed__97_1_tF761C30C6E4843D1A86B1CF9B2400664456D923B  : 
 	// System.Collections.IEnumerator System.Linq.Enumerable/<OfTypeIterator>d__97`1::<>7__wrap1
 	RuntimeObject* ___U3CU3E7__wrap1_5;
 };
+
+// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1<System.Double>
+struct AsyncValue_1_tEB0DAFC36390120B2189858822D394983AC03C9A  : public RuntimeObject
+{
+	// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncUpdater UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1::updater
+	AsyncUpdater_t723A6C592E8D827601A39F38D588CF80812FE976* ___updater_0;
+	// System.Int32 UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1::updateHandle
+	int32_t ___updateHandle_1;
+	// System.Boolean UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1::pendingUpdate
+	bool ___pendingUpdate_2;
+	// System.Func`1<T> UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1::updateFunc
+	Func_1_t7748833627297E42C5F5E294D4EF6457E839B5D7* ___updateFunc_3;
+	// T UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1::newValue
+	double ___newValue_4;
+	// System.Single UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1::updateTimeDeltaSeconds
+	float ___updateTimeDeltaSeconds_5;
+	// System.Single UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1::updateTimestamp
+	float ___updateTimestamp_6;
+	// T UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1::<value>k__BackingField
+	double ___U3CvalueU3Ek__BackingField_7;
+	// System.Single UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1::<changeTimestamp>k__BackingField
+	float ___U3CchangeTimestampU3Ek__BackingField_8;
+};
+
+// UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct AsyncValue_1_t8FFFF305FB898F2C17135C42A91378F7AB9808B7 : public RuntimeObject {};
 
 // System.Collections.Concurrent.ConcurrentDictionary`2<System.Guid,System.Object>
 struct ConcurrentDictionary_2_t85DA6368A00F30B81EBB65ED020A21501D665561  : public RuntimeObject
@@ -9465,6 +9521,16 @@ struct EventUnit_1_t856521CF6F4498C6CE86D8ADBBF32606FAC65DF8  : public Unit_tEFD
 	ControlOutput_t478B71A736EFBCE24B532F0279A9E701C9CDD8B9* ___U3CtriggerU3Ek__BackingField_16;
 };
 
+// System.Func`1<System.Double>
+struct Func_1_t7748833627297E42C5F5E294D4EF6457E839B5D7  : public MulticastDelegate_t
+{
+};
+
+// System.Func`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Func_1_tBB8824FA8746333BFFF3AB3CE4A41B58450AF431  : public MulticastDelegate_t
+{
+};
+
 // System.Func`2<System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>,System.Object>
 struct Func_2_tF42287527472FA89789873F068A87C60A00EC7D3  : public MulticastDelegate_t
 {
@@ -12595,6 +12661,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m7B1C427BE4245
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_mDD84F2861EF652091F30160CA40B99974FEAC377_gshared_inline (Func_2_t69265D7FBC2C3636F8EC4F844AE44F2CA605B56E* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___arg0, const RuntimeMethod* method) ;
 // TResult System.Func`2<UnityEngine.Vector4,System.Boolean>::Invoke(T)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m1029258D66DCEA7DB6E5E87D3DAD434C44D6C4C6_gshared_inline (Func_2_t6F0E9D3F3FD9400677A87178B87ABAE9E0497DA9* __this, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___arg0, const RuntimeMethod* method) ;
+// TResult System.Func`1<System.Double>::Invoke()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR double Func_1_Invoke_mEDA5C900255BD87C426F1915DD5F89979FFB7DAE_gshared_inline (Func_1_t7748833627297E42C5F5E294D4EF6457E839B5D7* __this, const RuntimeMethod* method) ;
 // TResult System.Func`2<System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>,System.Object>::Invoke(T)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Func_2_Invoke_m8EC2E5D1BEEA74F624F19C59924823693B9B39A5_gshared_inline (Func_2_tF42287527472FA89789873F068A87C60A00EC7D3* __this, KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230 ___arg0, const RuntimeMethod* method) ;
 // TResult System.Func`2<System.Object,System.ValueTuple`2<System.Object,System.Object>>::Invoke(T)
@@ -13839,6 +13907,11 @@ inline bool Func_2_Invoke_mDD84F2861EF652091F30160CA40B99974FEAC377_inline (Func
 inline bool Func_2_Invoke_m1029258D66DCEA7DB6E5E87D3DAD434C44D6C4C6_inline (Func_2_t6F0E9D3F3FD9400677A87178B87ABAE9E0497DA9* __this, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___arg0, const RuntimeMethod* method)
 {
 	return ((  bool (*) (Func_2_t6F0E9D3F3FD9400677A87178B87ABAE9E0497DA9*, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3, const RuntimeMethod*))Func_2_Invoke_m1029258D66DCEA7DB6E5E87D3DAD434C44D6C4C6_gshared_inline)(__this, ___arg0, method);
+}
+// TResult System.Func`1<System.Double>::Invoke()
+inline double Func_1_Invoke_mEDA5C900255BD87C426F1915DD5F89979FFB7DAE_inline (Func_1_t7748833627297E42C5F5E294D4EF6457E839B5D7* __this, const RuntimeMethod* method)
+{
+	return ((  double (*) (Func_1_t7748833627297E42C5F5E294D4EF6457E839B5D7*, const RuntimeMethod*))Func_1_Invoke_mEDA5C900255BD87C426F1915DD5F89979FFB7DAE_gshared_inline)(__this, method);
 }
 // TResult System.Func`2<System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>,System.Object>::Invoke(T)
 inline RuntimeObject* Func_2_Invoke_m8EC2E5D1BEEA74F624F19C59924823693B9B39A5_inline (Func_2_tF42287527472FA89789873F068A87C60A00EC7D3* __this, KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230 ___arg0, const RuntimeMethod* method)
@@ -22424,6 +22497,71 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CU3Ec__DisplayClass6_0_1_U3C
 		RuntimeObject* L_4;
 		L_4 = InvokerFuncInvoker1< RuntimeObject*, Il2CppFullySharedGenericAny >::Invoke(il2cpp_codegen_get_direct_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 3)), il2cpp_rgctx_method(method->klass->rgctx_data, 3), L_0, (il2cpp_codegen_class_is_value_type(il2cpp_rgctx_data(method->klass->rgctx_data, 2)) ? (((Il2CppFullySharedGenericAny)((Il2CppFullySharedGenericAny)(Il2CppFullySharedGenericAny*)L_3))): *(void**)(((Il2CppFullySharedGenericAny)((Il2CppFullySharedGenericAny)(Il2CppFullySharedGenericAny*)L_3)))));
 		return L_4;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0<System.Double>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass7_0__ctor_mBDD6A3B77222D59EBAF17A7246C09D0BC3ED705B_gshared (U3CU3Ec__DisplayClass7_0_t20DF8C90174AF4E98FA51C4EDD23C6624A506D12* __this, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2((RuntimeObject*)__this, NULL);
+		return;
+	}
+}
+// System.Void UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0<System.Double>::<.ctor>b__0()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass7_0_U3C_ctorU3Eb__0_mCFE9348E14D35E4C7DA1A8DCAD2C9E9C359E2712_gshared (U3CU3Ec__DisplayClass7_0_t20DF8C90174AF4E98FA51C4EDD23C6624A506D12* __this, const RuntimeMethod* method) 
+{
+	{
+		// this.updateHandle = updater.Register(() => newValue = updateFunc());
+		AsyncValue_1_tEB0DAFC36390120B2189858822D394983AC03C9A* L_0 = (AsyncValue_1_tEB0DAFC36390120B2189858822D394983AC03C9A*)__this->___U3CU3E4__this_0;
+		Func_1_t7748833627297E42C5F5E294D4EF6457E839B5D7* L_1 = (Func_1_t7748833627297E42C5F5E294D4EF6457E839B5D7*)__this->___updateFunc_1;
+		NullCheck(L_1);
+		double L_2;
+		L_2 = Func_1_Invoke_mEDA5C900255BD87C426F1915DD5F89979FFB7DAE_inline(L_1, il2cpp_rgctx_method(method->klass->rgctx_data, 3));
+		NullCheck(L_0);
+		L_0->___newValue_4 = L_2;
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass7_0__ctor_mA069EC242A88F42FB346A5DDB80766FD617C6556_gshared (U3CU3Ec__DisplayClass7_0_tC6EDAB96CE312F1A318FB109C12AEA6E201892D1* __this, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2((RuntimeObject*)__this, NULL);
+		return;
+	}
+}
+// System.Void UnityEngine.AdaptivePerformance.Samsung.Android.AsyncValue`1/<>c__DisplayClass7_0<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::<.ctor>b__0()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass7_0_U3C_ctorU3Eb__0_m57CF381E3F4F48B85C46A12C78D6A0479DBFBB59_gshared (U3CU3Ec__DisplayClass7_0_tC6EDAB96CE312F1A318FB109C12AEA6E201892D1* __this, const RuntimeMethod* method) 
+{
+	// sizeof(T)
+	const uint32_t SizeOf_T_t3E3EC53BC31D61EF9149420066258976713323DA = il2cpp_codegen_sizeof(il2cpp_rgctx_data(method->klass->rgctx_data, 4));
+	// T
+	const Il2CppFullySharedGenericAny L_2 = alloca(SizeOf_T_t3E3EC53BC31D61EF9149420066258976713323DA);
+	{
+		// this.updateHandle = updater.Register(() => newValue = updateFunc());
+		AsyncValue_1_t8FFFF305FB898F2C17135C42A91378F7AB9808B7* L_0 = (AsyncValue_1_t8FFFF305FB898F2C17135C42A91378F7AB9808B7*)__this->___U3CU3E4__this_0;
+		Func_1_tBB8824FA8746333BFFF3AB3CE4A41B58450AF431* L_1 = (Func_1_tBB8824FA8746333BFFF3AB3CE4A41B58450AF431*)__this->___updateFunc_1;
+		NullCheck(L_1);
+		InvokerActionInvoker1< Il2CppFullySharedGenericAny* >::Invoke(il2cpp_codegen_get_direct_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 3)), il2cpp_rgctx_method(method->klass->rgctx_data, 3), L_1, (Il2CppFullySharedGenericAny*)L_2);
+		NullCheck(L_0);
+		il2cpp_codegen_write_instance_field_data(L_0, il2cpp_rgctx_field(il2cpp_rgctx_data(method->klass->rgctx_data, 1),4), L_2, SizeOf_T_t3E3EC53BC31D61EF9149420066258976713323DA);
+		return;
 	}
 }
 #ifdef __clang__
@@ -38919,6 +39057,11 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m1029258D66DCE
 {
 	typedef bool (*FunctionPointerType) (RuntimeObject*, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___arg0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR double Func_1_Invoke_mEDA5C900255BD87C426F1915DD5F89979FFB7DAE_gshared_inline (Func_1_t7748833627297E42C5F5E294D4EF6457E839B5D7* __this, const RuntimeMethod* method) 
+{
+	typedef double (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Func_2_Invoke_m8EC2E5D1BEEA74F624F19C59924823693B9B39A5_gshared_inline (Func_2_tF42287527472FA89789873F068A87C60A00EC7D3* __this, KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230 ___arg0, const RuntimeMethod* method) 
 {
