@@ -38,17 +38,16 @@ public abstract class CardDeckInterface : MonoBehaviour {
 	public float cardMoveSpeed = 1.0f;
 
 	// Starting Index
-	[Tooltip("Starting card index")]
-	[SerializeField]
 	private int startingIndex = 0;
 
 	// cards holder for inspector
 	[Tooltip("Put your cards here")]
 	[SerializeField]
 	private List<Card> _cards;
-    
+
 	// real variable used
-	protected List<Card> cards;
+	[SerializeField]
+	public List<Card> cards;
 
 	// set wether the carddeck is a continous one
 	protected bool loop = false;
@@ -76,8 +75,9 @@ public abstract class CardDeckInterface : MonoBehaviour {
      */
 	private float tooltipDetectTimer;
 
+	[HideInInspector]
+	public bool AllowSwipe = true;
     public UnityEngine.Events.UnityAction<int> OnCardSelected;
-
 	/*
      * ======================================================================
      * Abstract Methods, MUST BE IMPLEMENTED
@@ -104,6 +104,7 @@ public abstract class CardDeckInterface : MonoBehaviour {
         // calculating deck size
         sizeX = (_cards.Count) * cardSpacing;
 		index = 0; offsett = 0.0f;
+		startingIndex = _cards.Count / 2;
 
 		Init();
 		isAnimating = false;
@@ -158,6 +159,8 @@ public abstract class CardDeckInterface : MonoBehaviour {
      */
 	private void ListenInput()
 	{
+		if (!AllowSwipe)
+			return;
 
 #if UNITY_STANDALONE
         // if mouse scroll changed, change the index
@@ -200,8 +203,8 @@ public abstract class CardDeckInterface : MonoBehaviour {
 				{
 					if (Physics.Raycast(ray, out hit))
 					{
-						Card card = hit.collider.gameObject.GetComponent<Card>();
-                        SetCurrentIndex(card.id);
+						if (hit.collider.gameObject.TryGetComponent(out Card card))
+							SetCurrentIndex(card.id);
                     }
 				}
 
@@ -247,8 +250,8 @@ public abstract class CardDeckInterface : MonoBehaviour {
 				{
 					if (Physics.Raycast(ray, out hit))
 					{
-						Card card = hit.collider.gameObject.GetComponent<Card>();
-                        SetCurrentIndex(card.id);
+						if(hit.collider.gameObject.TryGetComponent(out Card card))
+							SetCurrentIndex(card.id);
                     }
 				}
 
@@ -262,7 +265,8 @@ public abstract class CardDeckInterface : MonoBehaviour {
 			{
 				if (Physics.Raycast(ray, out hit))
 				{
-					Card card = hit.collider.gameObject.GetComponent<Card>();
+					if (!hit.collider.gameObject.TryGetComponent(out Card card))
+						return;
 
 					if (card.id == index)
 					{
@@ -347,7 +351,7 @@ public abstract class CardDeckInterface : MonoBehaviour {
      * note : we still want to handle null valued card in inspector
      *        assuming that is a space
      */ 
-	private void AddCard(Card inspectorCard)
+	public void AddCard(Card inspectorCard)
 	{
 		Card card = null;
 

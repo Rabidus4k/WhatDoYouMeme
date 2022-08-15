@@ -35,7 +35,9 @@ public class Sample : MonoBehaviour {
         Card currentCard = cardDeck.GetCurrentCard();
 
         if (currentCard != null)
+        {
             selectedCardText.text = sampleDescription + currentCard.tooltipMessage;
+        }
     }
 
 	// Update is called once per frame

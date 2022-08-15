@@ -18,13 +18,10 @@ public class SimpleCurvedCardDeck : CardDeckInterface
      */
     protected override void ReArrangeCards()
     {
-        float minX = -sizeX / 2.0f;
-        float maxX = sizeX / 2.0f;
-
+            Debug.Log(cards.Count);
         for (int i = 0; i < cards.Count; i++)
         {
             float posX = (-i + offsett) * cardSpacing;
-            float posZ = (posX - minX) / (maxX - minX);
 
             Vector3 pos = new Vector3( posX, 0, Mathf.Pow(posX * parabolaStrength * Mathf.PI, 2) * curveStrength);
 
