@@ -10955,6 +10955,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* StringUtility_PathEllipsis_m3E8E2A3
 	String_t* V_1 = NULL;
 	String_t* V_2 = NULL;
 	int32_t V_3 = 0;
+	Il2CppChar V_4 = 0x0;
 	{
 		// var ellipsis = "...";
 		V_0 = _stringLiteralFFEF3DBE279EE1F92E1E2E46F45BC18EBBF55A1A;
@@ -11003,7 +11004,7 @@ IL_0011:
 		int32_t L_13 = V_3;
 		if ((((int32_t)L_13) <= ((int32_t)0)))
 		{
-			goto IL_004d;
+			goto IL_0051;
 		}
 	}
 	{
@@ -11015,25 +11016,29 @@ IL_0011:
 		L_16 = String_Substring_mB1D94F47935D22E130FF2C01DBB6A4135FBB76CE(L_14, 0, L_15, NULL);
 		String_t* L_17 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var);
-		String_t* L_18;
-		L_18 = Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C((&((Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_StaticFields*)il2cpp_codegen_static_fields_for(Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var))->___DirectorySeparatorChar_2), NULL);
-		String_t* L_19 = V_1;
-		String_t* L_20;
-		L_20 = String_Concat_m093934F71A9B351911EE46311674ED463B180006(L_16, L_17, L_18, L_19, NULL);
-		return L_20;
+		Il2CppChar L_18 = ((Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_StaticFields*)il2cpp_codegen_static_fields_for(Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var))->___DirectorySeparatorChar_2;
+		V_4 = L_18;
+		String_t* L_19;
+		L_19 = Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C((&V_4), NULL);
+		String_t* L_20 = V_1;
+		String_t* L_21;
+		L_21 = String_Concat_m093934F71A9B351911EE46311674ED463B180006(L_16, L_17, L_19, L_20, NULL);
+		return L_21;
 	}
 
-IL_004d:
+IL_0051:
 	{
 		// return ellipsis + Path.DirectorySeparatorChar + fileName;
-		String_t* L_21 = V_0;
+		String_t* L_22 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var);
-		String_t* L_22;
-		L_22 = Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C((&((Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_StaticFields*)il2cpp_codegen_static_fields_for(Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var))->___DirectorySeparatorChar_2), NULL);
-		String_t* L_23 = V_1;
+		Il2CppChar L_23 = ((Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_StaticFields*)il2cpp_codegen_static_fields_for(Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var))->___DirectorySeparatorChar_2;
+		V_4 = L_23;
 		String_t* L_24;
-		L_24 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(L_21, L_22, L_23, NULL);
-		return L_24;
+		L_24 = Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C((&V_4), NULL);
+		String_t* L_25 = V_1;
+		String_t* L_26;
+		L_26 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(L_22, L_24, L_25, NULL);
+		return L_26;
 	}
 }
 // System.String Unity.VisualScripting.StringUtility::ToHexString(System.Byte[])

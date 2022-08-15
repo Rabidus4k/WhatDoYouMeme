@@ -5152,8 +5152,8 @@ inline void ValueTuple_5__ctor_mFA8F15EE5770AAF9026420AE64E667705760FAA3 (ValueT
 }
 // System.Void Fusion.RuntimeUnityFlagsSetup::Check_ENABLE_IL2CPP()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeUnityFlagsSetup_Check_ENABLE_IL2CPP_mA4B9E5AF380DD14490862AE8E79EBCA1841912EE (const RuntimeMethod* method) ;
-// System.Void Fusion.RuntimeUnityFlagsSetup::Check_NET_STANDARD_2_0()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeUnityFlagsSetup_Check_NET_STANDARD_2_0_mC342A808B7FC80E07B4D5490937CBDE019F50B4E (const RuntimeMethod* method) ;
+// System.Void Fusion.RuntimeUnityFlagsSetup::Check_NET_4_6()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeUnityFlagsSetup_Check_NET_4_6_m6DE0EFB056371FDBECE9EC77B972429B8CBE12E1 (const RuntimeMethod* method) ;
 // System.Void Fusion.RuntimeUnityFlagsSetup::Check_UNITY_2019_4_OR_NEWER()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeUnityFlagsSetup_Check_UNITY_2019_4_OR_NEWER_m2ECFFF28FB42496B655686212A9DFF09AC4A0291 (const RuntimeMethod* method) ;
 // System.Void System.Text.StringBuilder::.ctor()
@@ -11245,8 +11245,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FusionRuntimeCheck_RuntimeCheck_m6358CB3
 	{
 		// RuntimeUnityFlagsSetup.Check_ENABLE_IL2CPP();
 		RuntimeUnityFlagsSetup_Check_ENABLE_IL2CPP_mA4B9E5AF380DD14490862AE8E79EBCA1841912EE(NULL);
-		// RuntimeUnityFlagsSetup.Check_NET_STANDARD_2_0();
-		RuntimeUnityFlagsSetup_Check_NET_STANDARD_2_0_mC342A808B7FC80E07B4D5490937CBDE019F50B4E(NULL);
+		// RuntimeUnityFlagsSetup.Check_NET_4_6();
+		RuntimeUnityFlagsSetup_Check_NET_4_6_m6DE0EFB056371FDBECE9EC77B972429B8CBE12E1(NULL);
 		// RuntimeUnityFlagsSetup.Check_UNITY_2019_4_OR_NEWER();
 		RuntimeUnityFlagsSetup_Check_UNITY_2019_4_OR_NEWER_m2ECFFF28FB42496B655686212A9DFF09AC4A0291(NULL);
 		// }

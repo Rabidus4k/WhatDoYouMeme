@@ -13,16 +13,13 @@ public class BoardController : MonoBehaviour
     void Update()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit[] hits = Physics.RaycastAll(ray);
-
-        foreach (var hit in hits)
+        RaycastHit hit;
+        
+        if(Physics.Raycast(ray, out hit, LayerMask.NameToLayer("Table")))
         {
-            if (hit.collider.gameObject.layer != LayerMask.NameToLayer("Table")) continue;
+            Debug.Log("Ray to table");
             Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100, Color.red);
-
             CurrentMousePosition = hit.point;
-
-            break;
         }
     }
 }

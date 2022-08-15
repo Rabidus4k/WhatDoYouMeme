@@ -9,6 +9,7 @@ public class DraggableObject : MonoBehaviour
     private Rigidbody _rigidbody;
     private BoardController _board;
     private CardDeckInterface _cardDeckInterface;
+    private CardPlacer _cardPlacer;
     private Card _thisCard;
 
     [SerializeField]
@@ -26,6 +27,7 @@ public class DraggableObject : MonoBehaviour
 
     void Start()
     {
+        _cardPlacer = FindObjectOfType<CardPlacer>();
         _cardDeckInterface = FindObjectOfType<CardDeckInterface>();
         _board = FindObjectOfType<BoardController>();
         _rigidbody = GetComponent<Rigidbody>();
@@ -60,7 +62,7 @@ public class DraggableObject : MonoBehaviour
         if (AllowDrag)
         {
             AllowDrag = false;
-            //transform.rotation = Quaternion.Euler(90, 180, 0);
+            
             _cardDeckInterface.AddCard(_thisCard);
             Destroy(gameObject);
             _cardDeckInterface.AllowSwipe = true;
