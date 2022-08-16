@@ -13,6 +13,7 @@ public class DraggableObject : MonoBehaviour
     private Card _thisCard;
 
     [SerializeField] private LayerMask _cardLayerMask;
+    [SerializeField] private LayerMask _cardPlaceLayerMask;
     [SerializeField] private float _waitTime;
 
     public bool AllowDrag
@@ -46,8 +47,21 @@ public class DraggableObject : MonoBehaviour
             Debug.Log("EndDrag");
             AllowDrag = false;
 
-            _cardDeckInterface.AddCard(_thisCard);
-            Destroy(gameObject);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 20, _cardPlaceLayerMask))
+            {
+                if (hit.collider.gameObject.TryGetComponent(out CardPlacer cardPlacer))
+                {
+                    cardPlacer.PlaceCard(_thisCard);
+                }
+            }
+            else
+            {
+                _cardDeckInterface.AddCard(_thisCard);
+                Destroy(gameObject);
+            }
             _cardDeckInterface.AllowSwipe = true;
         }
     }

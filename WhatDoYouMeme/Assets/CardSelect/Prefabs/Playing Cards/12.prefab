@@ -162,6 +162,9 @@ MonoBehaviour:
   _cardLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  _cardPlaceLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
   _waitTime: 0.3
 --- !u!54 &-1483231566131877617
 Rigidbody:
