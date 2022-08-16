@@ -785,6 +785,7 @@ UnityEngine.PropertyNameUtils::PropertyNameFromString_Injected
 UnityEngine.QualitySettings::get_vSyncCount
 UnityEngine.QualitySettings::get_lodBias
 UnityEngine.QualitySettings::set_lodBias
+UnityEngine.QualitySettings::set_vSyncCount
 UnityEngine.QualitySettings::get_activeColorSpace
 UnityEngine.Quaternion::AngleAxis_Injected
 UnityEngine.Quaternion::FromToRotation_Injected
