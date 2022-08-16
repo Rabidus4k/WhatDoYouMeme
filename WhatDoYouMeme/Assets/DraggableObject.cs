@@ -12,8 +12,9 @@ public class DraggableObject : MonoBehaviour
     private CardPlacer _cardPlacer;
     private Card _thisCard;
 
-    [SerializeField]
-    private float _waitTime;
+    [SerializeField] private LayerMask _cardLayerMask;
+    [SerializeField] private float _waitTime;
+
     public bool AllowDrag
     {
         get => _allowDrag;
@@ -34,16 +35,31 @@ public class DraggableObject : MonoBehaviour
         _thisCard = GetComponent<Card>();
 
         AllowDrag = false;
-        _startYPos = 0; // Better to not hardcode that one but whatever
+        _startYPos = 5.5f; // Better to not hardcode that one but whatever
     }
 
-    private void OnMouseDrag()
+    public void EndDrag()
+    {
+        StopAllCoroutines();
+        if (AllowDrag)
+        {
+            Debug.Log("EndDrag");
+            AllowDrag = false;
+
+            _cardDeckInterface.AddCard(_thisCard);
+            Destroy(gameObject);
+            _cardDeckInterface.AllowSwipe = true;
+        }
+    }
+
+    public void InvokeDrag()
     {
         if (!AllowDrag)
             return;
+        if (_rigidbody.isKinematic)
+            return;
 
-        Vector3 newWorldPosition = new Vector3(_board.CurrentMousePosition.x, _startYPos + 1, _board.CurrentMousePosition.z);
-
+        Vector3 newWorldPosition = new Vector3(_board.CurrentMousePosition.x, _startYPos, _board.CurrentMousePosition.z);
         var difference = newWorldPosition - transform.position;
 
         var speed = 10 * difference;
@@ -51,29 +67,19 @@ public class DraggableObject : MonoBehaviour
         _rigidbody.rotation = Quaternion.Euler(new Vector3(speed.z + 90, speed.x, 0));
     }
 
-    private void OnMouseDown()
+    public void BeginDrag()
     {
         StartCoroutine(WaitSomeTime());
-    }
-
-    private void OnMouseUp()
-    {
-        StopAllCoroutines();
-        if (AllowDrag)
-        {
-            AllowDrag = false;
-            
-            _cardDeckInterface.AddCard(_thisCard);
-            Destroy(gameObject);
-            _cardDeckInterface.AllowSwipe = true;
-        }
     }
 
     private IEnumerator WaitSomeTime()
     {
         yield return new WaitForSeconds(_waitTime);
+        if (!_cardDeckInterface.IsSwiping)
+            yield return null;
+
+        Debug.Log("begin");
         _cardDeckInterface.cards.Remove(_thisCard);
-        _startYPos = transform.position.y;
         _cardDeckInterface.AllowSwipe = false;
         AllowDrag = true;
     }

@@ -5,6 +5,7 @@ public class BoardController : MonoBehaviour
     [HideInInspector] public Vector3 CurrentMousePosition;
     private Camera mainCamera;
 
+    public LayerMask TableMask;
     void Start()
     {
         mainCamera = Camera.main;
@@ -14,11 +15,10 @@ public class BoardController : MonoBehaviour
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        
-        if(Physics.Raycast(ray, out hit, LayerMask.NameToLayer("Table")))
+
+
+        if (Physics.Raycast(ray, out hit, 20, TableMask))
         {
-            Debug.Log("Ray to table");
-            Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100, Color.red);
             CurrentMousePosition = hit.point;
         }
     }

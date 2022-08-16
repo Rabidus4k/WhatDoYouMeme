@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 /*
  * Interface for card deck
- */ 
+ */
 [DisallowMultipleComponent]
 public abstract class CardDeckInterface : MonoBehaviour {
 
@@ -49,6 +49,8 @@ public abstract class CardDeckInterface : MonoBehaviour {
 	[SerializeField]
 	public List<Card> cards;
 
+	[SerializeField]
+	private LayerMask _cardLayerMask;
 	// set wether the carddeck is a continous one
 	protected bool loop = false;
 
@@ -65,7 +67,7 @@ public abstract class CardDeckInterface : MonoBehaviour {
 	/*
      * Internal variable for detecting swipe
      */
-	private bool isSwiping;
+	public bool IsSwiping;
 	private Vector3 touchBeginPoint;
 	private float startingOffsett;
 
@@ -108,7 +110,7 @@ public abstract class CardDeckInterface : MonoBehaviour {
 
 		Init();
 		isAnimating = false;
-        isSwiping = false;
+        IsSwiping = false;
 
 		StartCoroutine(IntroAnimation());
 	}
@@ -118,14 +120,11 @@ public abstract class CardDeckInterface : MonoBehaviour {
      */ 
 	private void Update()
 	{
-		//foreach (Card card in cards)
-			//if(card != null) card.transform.LookAt(Camera.main.transform.position);
-
 		ReArrangeCards();
 
 		ListenInput();
 
-		if (!isSwiping)
+		if (!IsSwiping)
 			IndexUpdate();
 	}
 
@@ -153,158 +152,175 @@ public abstract class CardDeckInterface : MonoBehaviour {
 	}
 
 
-
-	/*
+    DraggableObject draggableObject = null;
+    /*
      * Listen to touch swipe or mouse drage
      */
-	private void ListenInput()
-	{
-		if (!AllowSwipe)
-			return;
-
-#if UNITY_STANDALONE
-        // if mouse scroll changed, change the index
-        index += (int)Input.mouseScrollDelta.y;
-#endif
-        
+    private void ListenInput()
+    {
         if (Input.touchCount > 0)
-		{
-			// only touch 0 is used
-			Touch touch = Input.GetTouch(0);
+        {
+            Touch touch = Input.GetTouch(0);
 
-			Ray ray = Camera.main.ScreenPointToRay(touch.position);
-			RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+            RaycastHit hit;
 
-			if (touch.phase == TouchPhase.Began)
-			{
-				touchBeginPoint = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, CAMERA_TO_CARD_DISTANCE));
-				startingOffsett = offsett * cardSpacing;
-			}
+            if (touch.phase == TouchPhase.Began)
+            {
+                if (AllowSwipe)
+                {
+                    if (Physics.Raycast(ray, out hit, 20, _cardLayerMask))
+                        hit.collider.gameObject.TryGetComponent(out draggableObject);
 
-			if (touch.phase == TouchPhase.Moved)
-			{
-				Vector2 currentTouchPoint = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, CAMERA_TO_CARD_DISTANCE));
-				offsett = (startingOffsett + (currentTouchPoint.x - touchBeginPoint.x)) / cardSpacing;
+                    touchBeginPoint = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, CAMERA_TO_CARD_DISTANCE));
+                    startingOffsett = offsett * cardSpacing;
 
-				if (!loop)
-				{
-					if (offsett > (_cards.Count-1)) offsett = _cards.Count-1;
-					if (offsett < 0) offsett = 0;
-				}
+                }
+                if (draggableObject != null)
+                {
+                    draggableObject.BeginDrag();
+                }
+            }
 
-				isSwiping = true;
+            if (touch.phase == TouchPhase.Moved)
+            {
+                if (AllowSwipe)
+                {
+                    Vector2 currentTouchPoint = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, CAMERA_TO_CARD_DISTANCE));
+                    offsett = (startingOffsett + (currentTouchPoint.x - touchBeginPoint.x)) / cardSpacing;
 
-				index = (int)Mathf.Round(offsett);
-			}
-
-			if (touch.phase == TouchPhase.Ended)
-			{
-				if (!isSwiping)
-				{
-					if (Physics.Raycast(ray, out hit))
-					{
-						if (hit.collider.gameObject.TryGetComponent(out Card card))
-							SetCurrentIndex(card.id);
+                    if (!loop)
+                    {
+                        if (offsett > (_cards.Count - 1)) offsett = _cards.Count - 1;
+                        if (offsett < 0) offsett = 0;
                     }
-				}
 
-				isSwiping = false;
-			}
-		}
-		else
-		{
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hit;
+                    IsSwiping = true;
+                    index = (int)Mathf.Round(offsett);
+                }
+            
+                if (draggableObject != null)
+                {
+                    draggableObject.InvokeDrag();
+                }
+            }
 
-			if (Input.GetMouseButtonDown(0))
-			{
-				touchBeginPoint = Camera.main.ScreenToWorldPoint(
-					new Vector3(Input.mousePosition.x, Input.mousePosition.y, CAMERA_TO_CARD_DISTANCE));
-				startingOffsett = offsett * cardSpacing;
-			}
-
-			if (Input.GetMouseButton(0))
-			{
-				Vector3 currentTouchPoint = Camera.main.ScreenToWorldPoint(
-					new Vector3(Input.mousePosition.x, Input.mousePosition.y, CAMERA_TO_CARD_DISTANCE));
-
-				if ((currentTouchPoint - touchBeginPoint).sqrMagnitude > 0.01f)
-				{
-					offsett = (startingOffsett + (currentTouchPoint.x - touchBeginPoint.x)) / cardSpacing;
-
-					if (!loop)
-					{
-						if (offsett > (_cards.Count-1)) offsett = _cards.Count-1;
-						if (offsett < 0) offsett = 0;
-					}
-
-					isSwiping = true;
-
-					index = (int)Mathf.Round(offsett);
-				}
-			}
-
-			if (Input.GetMouseButtonUp(0))
-			{
-				if (!isSwiping)
-				{
-					if (Physics.Raycast(ray, out hit))
-					{
-						if(hit.collider.gameObject.TryGetComponent(out Card card))
-							SetCurrentIndex(card.id);
+            if (touch.phase == TouchPhase.Ended)
+            {
+                if (AllowSwipe)
+                {
+                    if (!IsSwiping)
+                    {
+                        if (Physics.Raycast(ray, out hit, 20, _cardLayerMask))
+                        {
+                            Debug.Log("Ray to card");
+                            Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100, Color.red);
+                            if (hit.collider.gameObject.TryGetComponent(out Card card))
+                                SetCurrentIndex(card.id);
+                        }
                     }
-				}
 
-				isSwiping = false;
-			}
+                    IsSwiping = false;
+                }
 
-			/*
-             * Show tooltip based on tooltip timer
-             */
-			if (CardTooltip.instance != null)
-			{
-				if (Physics.Raycast(ray, out hit))
-				{
-					if (!hit.collider.gameObject.TryGetComponent(out Card card))
-						return;
+                if (draggableObject != null)
+                {
+                    draggableObject.EndDrag();
+                    draggableObject = null;
+                }
+            }
+        }
+        else
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+ 
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (AllowSwipe)
+                {
+                    if (Physics.Raycast(ray, out hit, 20, _cardLayerMask))
+                        hit.collider.gameObject.TryGetComponent(out draggableObject);
 
-					if (card.id == index)
-					{
-						tooltipDetectTimer += Time.deltaTime;
-						if (tooltipDetectTimer > tooltipTriggerTime)
-						{
-							CardTooltip.instance.SetMessage(card.tooltipMessage);
-							CardTooltip.instance.gameObject.SetActive(true);
-							CardTooltip.instance.transform.position = Input.mousePosition;
+                    touchBeginPoint = Camera.main.ScreenToWorldPoint(
+                        new Vector3(Input.mousePosition.x, Input.mousePosition.y, CAMERA_TO_CARD_DISTANCE));
+                    startingOffsett = offsett * cardSpacing;
+                }
 
-						}
-					}
-					else
-					{
-						CardTooltip.instance.gameObject.SetActive(false);
-						tooltipDetectTimer = 0;
-					}
-				}
-				else
-				{
-					CardTooltip.instance.gameObject.SetActive(false);
-					tooltipDetectTimer = 0;
-				}
-			}
+                if (draggableObject != null)
+                {
+                    draggableObject.BeginDrag();
+                }
+            }
 
-		}
+            if (Input.GetMouseButton(0))
+            {
+                if (AllowSwipe)
+                {
+                    Vector3 currentTouchPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, CAMERA_TO_CARD_DISTANCE));
 
-		if (index < 0)	index += _cards.Count;
-		if (index > _cards.Count - 1)	index -= _cards.Count;
-		index %= _cards.Count;
-	}
+                    if ((currentTouchPoint - touchBeginPoint).sqrMagnitude > 0.01f)
+                    {
+                        offsett = (startingOffsett + (currentTouchPoint.x - touchBeginPoint.x)) / cardSpacing;
 
-	/*
+                        if (!loop)
+                        {
+                            if (offsett > (_cards.Count - 1)) offsett = _cards.Count - 1;
+                            if (offsett < 0) offsett = 0;
+                        }
+
+                        IsSwiping = true;
+
+                        index = (int)Mathf.Round(offsett);
+                    }
+                }
+
+                if (draggableObject != null)
+                {
+                    Debug.Log("In");
+                    draggableObject.InvokeDrag();
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (AllowSwipe)
+                {
+                    if (!IsSwiping)
+                    {
+                        if (Physics.Raycast(ray, out hit, 20, _cardLayerMask))
+                        {
+                            if (hit.collider.gameObject.TryGetComponent(out Card card))
+                            {
+                                SetCurrentIndex(card.id);
+                                Debug.Log(card.id);
+                            }
+                        }
+                    }
+                    IsSwiping = false;
+                }
+
+                if (draggableObject != null)
+                {
+                    draggableObject.EndDrag();
+                    draggableObject = null;
+                }
+            }
+        }
+
+        if (index < 0) index += _cards.Count;
+        if (index > _cards.Count - 1) index -= _cards.Count;
+        index %= _cards.Count;
+    }
+
+
+
+    /*
      * Listening to index change and interpolate the offsett to match the index
      * This code called every frame in Update function
      * Make this functon virtual, so every class can use their own interpolation 
      */
-	protected virtual void IndexUpdate()
+    protected virtual void IndexUpdate()
 	{
 
 		if (index < 0) index = 0;
@@ -361,7 +377,7 @@ public abstract class CardDeckInterface : MonoBehaviour {
             card.transform.SetParent(transform, true);
             card.transform.position = Vector3.one * 999999;
 			card.transform.rotation = Quaternion.Euler(new Vector3(-90, 180, 0));
-            card.id = _cards.IndexOf(inspectorCard);
+            card.id = cards.Count;
 
         }
 

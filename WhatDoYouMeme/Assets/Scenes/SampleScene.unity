@@ -376,7 +376,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875278073}
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: -1.36, z: 4.16}
+  m_LocalPosition: {x: 0, y: -1.58, z: 4.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -405,9 +405,11 @@ MonoBehaviour:
   - {fileID: 11496634, guid: e0713842eadaeb04ebc7ea016848f23f, type: 3}
   - {fileID: 11496634, guid: e0713842eadaeb04ebc7ea016848f23f, type: 3}
   - {fileID: 11496634, guid: e0713842eadaeb04ebc7ea016848f23f, type: 3}
-  - {fileID: 11496634, guid: e0713842eadaeb04ebc7ea016848f23f, type: 3}
-  - {fileID: 11496634, guid: e0713842eadaeb04ebc7ea016848f23f, type: 3}
   cards: []
+  _cardLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  IsSwiping: 0
   AllowSwipe: 1
   curveStrength: 0.001
   parabolaStrength: 4.5
@@ -505,6 +507,11 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6742333700147452113, guid: 53fc8da2d0602f44b97489bfad66982f,
+        type: 3}
+      propertyPath: TableMask.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
     - target: {fileID: 6742333700147452122, guid: 53fc8da2d0602f44b97489bfad66982f,
         type: 3}
       propertyPath: m_Name
@@ -513,6 +520,11 @@ PrefabInstance:
     - target: {fileID: 6742333700147452124, guid: 53fc8da2d0602f44b97489bfad66982f,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742333700147452125, guid: 53fc8da2d0602f44b97489bfad66982f,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6742333700147452126, guid: 53fc8da2d0602f44b97489bfad66982f,
@@ -543,7 +555,7 @@ PrefabInstance:
     - target: {fileID: 6742333700147452126, guid: 53fc8da2d0602f44b97489bfad66982f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.57
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: 6742333700147452126, guid: 53fc8da2d0602f44b97489bfad66982f,
         type: 3}
@@ -627,8 +639,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2560216524232057812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 4.81, z: 1}
-  m_LocalScale: {x: 1.0901, y: 0.04, z: 1.5389}
+  m_LocalPosition: {x: 1, y: 4.81, z: 1}
+  m_LocalScale: {x: 1.2, y: 0.04, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -646,7 +658,7 @@ GameObject:
   - component: {fileID: 2560216524232057815}
   - component: {fileID: 2560216524232057814}
   - component: {fileID: 2560216524232057816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Placer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -791,8 +803,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2560216524849582432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 4.81, z: 1}
-  m_LocalScale: {x: 1.0901, y: 0.04, z: 1.5389}
+  m_LocalPosition: {x: -1, y: 4.81, z: 1}
+  m_LocalScale: {x: 1.2, y: 0.04, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

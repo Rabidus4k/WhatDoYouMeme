@@ -13,13 +13,22 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Drag",
+                    "type": "Value",
+                    "id": "9c5c78d8-c68b-4b53-af4a-e2eb2f1ec539",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "42e0fea0-b19c-42de-90bd-7f1ff653c820",
-                    "path": "<Mouse>/leftButton",
+                    "id": "9db834d4-5c40-4290-b82d-604f85554caf",
+                    "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -29,12 +38,23 @@
                 },
                 {
                     "name": "",
-                    "id": "9db834d4-5c40-4290-b82d-604f85554caf",
-                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "id": "d29c68c1-2969-4d41-bc3b-837d37e15970",
+                    "path": "<Touchscreen>/delta",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6573e0a-9a94-4344-9793-b034fb34fa91",
+                    "path": "<Touchscreen>/primaryTouch",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Click",
+                    "action": "Drag",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

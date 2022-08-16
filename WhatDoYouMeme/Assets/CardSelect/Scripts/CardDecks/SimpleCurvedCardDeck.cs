@@ -18,7 +18,6 @@ public class SimpleCurvedCardDeck : CardDeckInterface
      */
     protected override void ReArrangeCards()
     {
-            Debug.Log(cards.Count);
         for (int i = 0; i < cards.Count; i++)
         {
             float posX = (-i + offsett) * cardSpacing;
