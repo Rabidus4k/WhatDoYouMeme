@@ -12,7 +12,7 @@ public class SituationDeck : MonoBehaviour
 
     public void SpawnCard(int index)
     {
-        _spawnedCard = Instantiate(SituationCards[index], SpawnPoint.position, Quaternion.Euler(90,0,0));
+        _spawnedCard = Instantiate(SituationCards[index], SpawnPoint.position, Quaternion.identity);
         CardPlacer.PlaceCard(_spawnedCard);
     }
 }

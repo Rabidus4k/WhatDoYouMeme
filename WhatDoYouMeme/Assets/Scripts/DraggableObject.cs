@@ -78,7 +78,7 @@ public class DraggableObject : MonoBehaviour
 
         var speed = 10 * difference;
         _rigidbody.velocity = speed;
-        _rigidbody.rotation = Quaternion.Euler(new Vector3(speed.z + 90, speed.x, 0));
+        _rigidbody.rotation = Quaternion.Euler(new Vector3(speed.z, speed.x, 0));
     }
 
     public void BeginDrag()

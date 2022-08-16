@@ -376,7 +376,7 @@ public abstract class CardDeckInterface : MonoBehaviour {
             card = Card.Instantiate<Card>(inspectorCard);
             card.transform.SetParent(transform, true);
             card.transform.position = Vector3.one * 999999;
-			card.transform.rotation = Quaternion.Euler(new Vector3(-90, 180, 0));
+			card.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             card.id = cards.Count;
 
         }
